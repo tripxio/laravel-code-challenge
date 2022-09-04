@@ -1,6 +1,6 @@
-<p align="center"><a href="https://aspireapp.com" target="_blank"><img src="https://global-uploads.webflow.com/5ed5b60be1889f546024ada0/5ed8a32c8e1f40c8d24bc32b_Aspire%20Logo%402x.png" width="400"></a></p>
 
-## Aspire Challenge
+
+## Coding Challenge
 
 ### Setup procedure
 1. Fork the repository in your personal github account
