@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Models\Loan;
 use Laravel\Passport\HasApiTokens;
+
 
 class User extends Authenticatable
 {
@@ -51,4 +53,20 @@ class User extends Authenticatable
     {
         return $this->hasMany(DebitCard::class, 'user_id');
     }
+
+  /**
+     * An User has one loan
+     *
+     * @return HasOne
+     */
+
+public function loan(){
+return $this->hasOne(Loan::class,'user_id');
+}
+
+
+
+
+
+
 }

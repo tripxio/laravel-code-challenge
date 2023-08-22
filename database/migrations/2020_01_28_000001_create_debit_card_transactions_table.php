@@ -15,17 +15,17 @@ class CreateDebitCardTransactionsTable extends Migration
     {
         Schema::create('debit_card_transactions', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('debit_card_id');
+            $table->unsignedBigInteger('debit_card_id');
             $table->integer('amount');
             $table->string('currency_code');
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('debit_card_id')
-                ->references('id')
-                ->on('debit_cards')
-                ->onUpdate('cascade')
-                ->onDelete('restrict');
+            // $table->foreign('debit_card_id')
+            //     ->references('id')
+            //     ->on('debit_cards')
+            //     ->onUpdate('cascade')
+            //     ->onDelete('restrict');
         });
     }
 

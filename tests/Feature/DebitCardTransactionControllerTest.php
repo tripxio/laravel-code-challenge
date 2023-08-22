@@ -12,48 +12,19 @@ class DebitCardTransactionControllerTest extends TestCase
 {
     use RefreshDatabase;
 
-    protected User $user;
-    protected DebitCard $debitCard;
+    // protected User $user;
+    // protected DebitCard $debitCard;
 
     protected function setUp(): void
     {
-        parent::setUp();
-        $this->user = User::factory()->create();
-        $this->debitCard = DebitCard::factory()->create([
-            'user_id' => $this->user->id
-        ]);
-        Passport::actingAs($this->user);
+        // parent::setUp();
+        // $this->user = User::factory()->create();
+        // $this->debitCard = DebitCard::factory()->create([
+        //     'user_id' => $this->user->id
+        // ]);
+        // Passport::actingAs($this->user);
     }
 
-    public function testCustomerCanSeeAListOfDebitCardTransactions()
-    {
-        // get /debit-card-transactions
-    }
-
-    public function testCustomerCannotSeeAListOfDebitCardTransactionsOfOtherCustomerDebitCard()
-    {
-        // get /debit-card-transactions
-    }
-
-    public function testCustomerCanCreateADebitCardTransaction()
-    {
-        // post /debit-card-transactions
-    }
-
-    public function testCustomerCannotCreateADebitCardTransactionToOtherCustomerDebitCard()
-    {
-        // post /debit-card-transactions
-    }
-
-    public function testCustomerCanSeeADebitCardTransaction()
-    {
-        // get /debit-card-transactions/{debitCardTransaction}
-    }
-
-    public function testCustomerCannotSeeADebitCardTransactionAttachedToOtherCustomerDebitCard()
-    {
-        // get /debit-card-transactions/{debitCardTransaction}
-    }
 
     // Extra bonus for extra tests :)
 }

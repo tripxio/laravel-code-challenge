@@ -10,10 +10,18 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Loan extends Model
 {
     public const STATUS_DUE = 'due';
+    public const STATUS_PARTIAL = 'partial';
     public const STATUS_REPAID = 'repaid';
+
 
     public const CURRENCY_SGD = 'SGD';
     public const CURRENCY_VND = 'VND';
+
+   
+
+
+
+
 
     use HasFactory;
 
@@ -58,4 +66,10 @@ class Loan extends Model
     {
         return $this->hasMany(ScheduledRepayment::class, 'loan_id');
     }
+
+/***
+ * @var array
+ */
+protected $appends=['is_user'];
+
 }
