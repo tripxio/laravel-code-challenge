@@ -24,12 +24,12 @@ class DebitCardController extends BaseController
      */
     public function index(DebitCardShowRequest $request): JsonResponse
     {
-        $debitCards = $request->user()
-            ->debitCards()
-            ->active()
-            ->get();
+$debitCards = $request->user()
+    ->debitCards()
+    ->active()
+    ->get();
 
-        return response()->json(DebitCardResource::collection($debitCards), HttpResponse::HTTP_OK);
+return response()->json(DebitCardResource::collection($debitCards), HttpResponse::HTTP_OK);
     }
 
     /**
@@ -73,9 +73,13 @@ class DebitCardController extends BaseController
      */
     public function update(DebitCardUpdateRequest $request, DebitCard $debitCard)
     {
+
+
+
         $debitCard->update([
             'disabled_at' => $request->input('is_active') ? null : Carbon::now(),
         ]);
+
 
         return response()->json(new DebitCardResource($debitCard), HttpResponse::HTTP_OK);
     }
@@ -95,4 +99,16 @@ class DebitCardController extends BaseController
 
         return response()->json([], HttpResponse::HTTP_NO_CONTENT);
     }
+
+
+public function test_debitcard(DebitCard $debitCard){
+return $debitCard->get();
+}
+
+
+
+
+
+
+
 }

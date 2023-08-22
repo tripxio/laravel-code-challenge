@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\ScheduledRepayment;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Loan;
 
 class ScheduledRepaymentFactory extends Factory
 {
@@ -23,6 +24,14 @@ class ScheduledRepaymentFactory extends Factory
     {
         return [
             // TODO: Complete factory
+            'loan_id'=>Loan::factory()->create(),
+            'amount'=>5000,
+            'outstanding_amount'=>0,
+            'currency_code'=>'12',
+            'due_date'=>'2020-04-20',
+            'status'=>ScheduledRepayment::STATUS_REPAID
+
+
         ];
     }
 }

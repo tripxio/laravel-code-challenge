@@ -2,10 +2,11 @@
 
 namespace App\Http\Requests;
 
-use App\Models\DebitCard;
+use App\Models\Loan;
 use Illuminate\Foundation\Http\FormRequest;
 
-class DebitCardDestroyRequest extends FormRequest
+
+class LoanCreateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -14,7 +15,7 @@ class DebitCardDestroyRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return $this->user()->can('delete', $this->route('debitCard'));
+        return true;
 
     }
 
@@ -25,6 +26,8 @@ class DebitCardDestroyRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [];
+        return [
+            //
+        ];
     }
 }

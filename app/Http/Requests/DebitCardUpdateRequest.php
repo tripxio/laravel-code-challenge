@@ -15,6 +15,7 @@ class DebitCardUpdateRequest extends FormRequest
     public function authorize(): bool
     {
         return $this->user()->can('update', $this->route('debitCard'));
+        // return true;
     }
 
     /**
@@ -25,7 +26,7 @@ class DebitCardUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'is_active' => 'required|boolean',
+            'is_active' => 'required:boolean',
         ];
     }
 }
